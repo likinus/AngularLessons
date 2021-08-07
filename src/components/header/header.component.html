@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button *ngIf="!isMainPage" routerLink="/login" mat-raised-button color="accent">
+    Login
+  </button>
+  <button *ngIf="isMainPage" (click)="logout()" mat-raised-button color="accent">
+    Logout
+  </button>
+</mat-toolbar>

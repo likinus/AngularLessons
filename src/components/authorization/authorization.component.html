@@ -1,0 +1,30 @@
+<mat-card class="card">
+    <p class="card-title">Sign in</p>
+  <form class="card-form" [formGroup]="loginForm" (ngSubmit)="signIn($event)">
+    <mat-form-field class="card-login">
+      <input formControlName="login" matInput placeholder="Email">
+    </mat-form-field>
+    <mat-form-field class="card-password">
+      <input formControlName="password" type="password" matInput placeholder="Password">
+    </mat-form-field>
+    <p *ngIf="error" class="mat-error">{{error}}</p>
+    <a class="card-link" routerLink="/register">Хотите зарегистрироваться?</a>
+    <div class="social-container">
+      <button (click)="facebookSignIn($event)" class="button-icon-wrapper" mat-raised-button>
+        <img class="card-social" src="assets/facebookLogo.svg">
+      </button>
+      <button (click)="googleSignIn($event)" class="button-icon-wrapper" mat-raised-button>
+        <img class="card-social" src="assets/googleLogo.svg">
+      </button>
+      <button (click)="githubSignIn($event)" class="button-icon-wrapper" mat-raised-button>
+        <img class="card-social" src="assets/githubLogo.svg">
+      </button>
+    </div>
+    <div class="submit-button-wrapper">
+      <button class="submit-button" mat-flat-button color="primary">Sign in</button>
+    </div>
+  </form>
+</mat-card>
+<ng-template>
+  Hello from the dialog!
+</ng-template>

@@ -1,0 +1,53 @@
+.card {
+  max-width: 600px;
+  margin: 40px auto 0;
+}
+
+.card-form {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card-login {
+  display: block;
+}
+
+.card-password {
+  display: block;
+}
+
+.card-link {
+  text-decoration: none;
+  color: darkgoldenrod;
+}
+
+.social-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.button-icon-wrapper {
+  width: 30%;
+  padding: 6px 30px;
+  border: 1px solid black;
+}
+
+.card-social {
+  width: 25px;
+}
+
+.submit-button-wrapper {
+  padding-top: 15px;
+  display: flex;
+}
+
+.submit-button {
+  margin: 0 auto;
+  padding: 6px 40px;
+}

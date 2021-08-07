@@ -1,0 +1,15 @@
+<mat-card class="card">
+  <p class="card-title">Sign up</p>
+  <form class="card-form" [formGroup]="registerForm" (ngSubmit)="submit($event)">
+    <mat-form-field class="card-login">
+      <input formControlName="login" matInput placeholder="Email">
+    </mat-form-field>
+    <mat-form-field class="card-password">
+      <input formControlName="password" type="password" matInput placeholder="Password">
+    </mat-form-field>
+    <p *ngIf="error" class="mat-error">{{error}}</p>
+    <div class="submit-button-wrapper">
+      <button class="submit-button" mat-flat-button color="primary">Sign up</button>
+    </div>
+  </form>
+</mat-card>
