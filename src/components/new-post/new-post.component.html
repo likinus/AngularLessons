@@ -1,0 +1,29 @@
+<h2 class="newPost-title">New question</h2>
+<mat-divider></mat-divider>
+<form class="newPost-form" [formGroup]="newPostForm" (ngSubmit)="submit($event)">
+  <mat-form-field class="newPost-title">
+    <input formControlName="title" matInput placeholder="Title">
+  </mat-form-field>
+  <mat-form-field class="newPost-text">
+    <textarea
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="1"
+      cdkAutosizeMaxRows="5"
+      formControlName="text"
+      matInput
+      placeholder="Text">
+    </textarea>
+  </mat-form-field>
+  <mat-form-field class="newPost-technology" appearance="fill">
+    <mat-label>Technology stack</mat-label>
+    <mat-select formControlName="technology">
+      <mat-option *ngFor="let technology of technologyStack" [value]="technology.value">
+        {{technology.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="submit-button-wrapper">
+    <button class="submit-button" mat-flat-button color="primary">Ok</button>
+    <button class="close-button" mat-dialog-close mat-flat-button color="primary">Close</button>
+  </div>
+</form>

@@ -1,0 +1,28 @@
+.newPost-form {
+  padding: 12px 0 12px;
+}
+
+.newPost-title {
+  display: block;
+  width: 100%;
+}
+
+.newPost-text {
+  display: block;
+  width: 100%;
+}
+
+.technology {
+  display: block;
+  width: 100%;
+}
+
+.submit-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-button {
+  margin-left: 12px;
+}
+

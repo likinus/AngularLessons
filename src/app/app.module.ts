@@ -11,7 +11,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import {ReactiveFormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatMenuModule} from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +24,10 @@ import { RegistrationComponent } from '../components/registration/registration.c
 import { HeaderComponent } from '../components/header/header.component';
 import { MainPageComponent } from '../components/main-page/main-page.component';
 import {MainPageGuard} from "../components/main-page/main-page.guard";
+import { SortingComponent } from '../components/sorting/sorting.component';
+import { PostComponent } from '../components/post/post.component';
+import { NewPostComponent } from '../components/new-post/new-post.component';
+import { PostMoreComponent } from '../components/post-more/post-more.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC2X69kHXcPPiXFIEtkiZVPwVQyNe-vlRg",
@@ -38,10 +46,17 @@ const firebaseConfig = {
     RegistrationComponent,
     HeaderComponent,
     MainPageComponent,
+    SortingComponent,
+    PostComponent,
+    NewPostComponent,
+    PostMoreComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatSelectModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
@@ -54,6 +69,7 @@ const firebaseConfig = {
     AngularFireAuthModule, // auth
     AngularFireStorageModule,
     ReactiveFormsModule,
+    MatDividerModule,
     // storage
   ],
   providers: [MainPageGuard],

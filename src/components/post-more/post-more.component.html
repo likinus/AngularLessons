@@ -1,0 +1,25 @@
+<div class="post-more-container">
+  <div class="post-more-question-block">
+    <h2 class="post-more-title">{{this.post.title}}</h2>
+    <p class="post-more-descr">
+      {{this.post.postText}}
+    </p>
+    <p class="post-more-descr">Technology: {{this.post.tech}}</p>
+  </div>
+  <form [formGroup]="newCommentForm" class="post-more-comment-container">
+    <p class="answer-title">Your answer</p>
+    <mat-form-field class="newPost-text">
+    <textarea
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="1"
+      cdkAutosizeMaxRows="5"
+      formControlName="answer"
+      matInput
+      placeholder="Answer">
+    </textarea>
+    </mat-form-field>
+    <div class="submit-button-wrapper">
+      <button class="submit-button" mat-flat-button color="primary">Submit</button>
+    </div>
+  </form>
+</div>

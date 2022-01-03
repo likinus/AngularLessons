@@ -1,0 +1,16 @@
+.main-container {
+  padding: 20px 16px 0
+}
+
+.posts-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
+.post {
+  width: 32%;
+  margin-bottom: 16px;
+  cursor: pointer;
+}

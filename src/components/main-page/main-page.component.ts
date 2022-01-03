@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {PostService} from "../../app/services/post/post.service";
+
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -7,12 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  public userLogin: string | null = ''
+  public userLogin: string | null = '';
 
-  constructor() { }
+  constructor(private postService: PostService ) { }
 
   ngOnInit(): void {
-    this.userLogin = sessionStorage.getItem('user')
+    this.userLogin = sessionStorage.getItem('user');
+
+    this.postService.getAllPosts();
   }
 
+  getPosts() {
+    return this.postService.posts;
+  }
+
+  openPost(postId?: string): void {
+    this.postService.openPostMore(postId)
+  }
 }

@@ -1,1 +1,6 @@
-<h1>Hello {{ userLogin }}</h1>
+<div class="main-container">
+  <app-sorting></app-sorting>
+  <div class="posts-container">
+    <app-post *ngFor="let post of getPosts()" class="post" [post]="post" (click)="openPost(post.id)"></app-post>
+  </div>
+</div>

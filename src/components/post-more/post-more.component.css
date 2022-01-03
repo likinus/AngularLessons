@@ -1,0 +1,35 @@
+.post-more-container {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px 20px 0;
+}
+
+.post-more-question-block {
+}
+
+.post-more-title {
+  text-align: center;
+}
+
+.post-more-descr {
+
+}
+
+.post-more-comment-container {
+  padding-top: 30px;
+  width: 100%;
+}
+
+.newPost-text {
+  width: 100%;
+}
+
+.submit-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-button {
+  width: 20%;
+}

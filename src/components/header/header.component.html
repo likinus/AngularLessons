@@ -1,10 +1,19 @@
 <mat-toolbar color="primary">
   <span>My App</span>
   <span class="example-spacer"></span>
+  <div class="header-menu-container" *ngIf="isMainPage">
+  <button class="question-button" (click)="openDialog()" mat-stroked-button color="primary">
+    Add Question
+  </button>
+  <span class="material-icons md-48">face</span>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
+  </div>
   <button *ngIf="!isMainPage" routerLink="/login" mat-raised-button color="accent">
     Login
   </button>
-  <button *ngIf="isMainPage" (click)="logout()" mat-raised-button color="accent">
-    Logout
-  </button>
 </mat-toolbar>
+
