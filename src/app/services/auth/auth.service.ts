@@ -75,7 +75,6 @@ export class AuthService {
 
   logOut() {
     return this.firebaseAuth.signOut().then(data => {
-      console.log(data);
       this.router.navigate(['/login'])
       this.userData = null;
 

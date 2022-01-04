@@ -11,7 +11,8 @@ export class MainPageComponent implements OnInit {
 
   public userLogin: string | null = '';
 
-  constructor(private postService: PostService ) { }
+  constructor(private postService: PostService ) {
+  }
 
   ngOnInit(): void {
     this.userLogin = sessionStorage.getItem('user');
@@ -21,9 +22,5 @@ export class MainPageComponent implements OnInit {
 
   getPosts() {
     return this.postService.posts;
-  }
-
-  openPost(postId?: string): void {
-    this.postService.openPostMore(postId)
   }
 }

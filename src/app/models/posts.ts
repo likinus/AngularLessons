@@ -3,4 +3,5 @@ export interface Post {
   tech?: string;
   title?: string;
   id?: string;
+  comments?: string[]
 }

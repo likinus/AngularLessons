@@ -28,6 +28,7 @@ import { SortingComponent } from '../components/sorting/sorting.component';
 import { PostComponent } from '../components/post/post.component';
 import { NewPostComponent } from '../components/new-post/new-post.component';
 import { PostMoreComponent } from '../components/post-more/post-more.component';
+import { CommentsComponent } from '../components/comments/comments.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC2X69kHXcPPiXFIEtkiZVPwVQyNe-vlRg",
@@ -50,6 +51,7 @@ const firebaseConfig = {
     PostComponent,
     NewPostComponent,
     PostMoreComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,

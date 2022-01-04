@@ -1,6 +1,6 @@
 <div class="main-container">
   <app-sorting></app-sorting>
   <div class="posts-container">
-    <app-post *ngFor="let post of getPosts()" class="post" [post]="post" (click)="openPost(post.id)"></app-post>
+    <app-post *ngFor="let post of getPosts()" class="post" [post]="post"></app-post>
   </div>
 </div>

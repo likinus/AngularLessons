@@ -1,11 +1,11 @@
-<div class="post-container">
+<div class="post-container" (click)="openPost(post.id)">
   <span class="post-title">{{post.title}}</span>
   <div class="post-columns__container">
     <span class="post-time">Post Date</span>
     <span class="post-time">{{myMoment}}</span>
   </div>
   <div class="post-columns__container">
-    <span class="post-descr">Technologyy</span>
+    <span class="post-descr">Technology</span>
     <span class="post-descr">{{post.tech}}</span>
   </div>
 </div>

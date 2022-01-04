@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import {FormControl, FormGroup} from "@angular/forms";
 import {PostService} from "../../app/services/post/post.service";
 import {ActivatedRoute} from "@angular/router";
@@ -14,7 +15,7 @@ export class PostMoreComponent implements OnInit {
   public newCommentForm: FormGroup;
   post: Post = {};
 
-  constructor(private postService: PostService, private route: ActivatedRoute) {
+  constructor(private postService: PostService, private route: ActivatedRoute, private location: Location) {
     this.newCommentForm = new FormGroup({
       answer: new FormControl(null),
     })
@@ -24,13 +25,24 @@ export class PostMoreComponent implements OnInit {
     this.getCurrentPost();
   }
 
+  routeBack(): void {
+    this.location.back();
+  }
+
+  setNewComment(e: Event) {
+    const id = this.route.snapshot.paramMap.get('id')
+
+    this.postService.setComment(this.newCommentForm.value.answer, id || '');
+    this.newCommentForm.reset();
+    this.getCurrentPost()
+  }
+
   getCurrentPost() {
     const id = this.route.snapshot.paramMap.get('id')
 
     this.postService.getPost(id || '').subscribe((doc) => {
       if (doc.exists) {
        this.post = doc.data() as object;
-        console.log(this.post)
       } else {
         this.post = {}
       }
