@@ -7,7 +7,10 @@
     </p>
     <p class="post-more-descr">Technology: {{this.post.tech}}</p>
   </div>
-  <p class="post-more-comments-title">Answers</p>
+  <p *ngIf="this.post?.comments?.length; else elseBlock" class="post-more-comments-title">Answers</p>
+  <ng-template #elseBlock>
+    <p class="post-more-comments-title">There are no answers</p>
+  </ng-template>
   <app-comments *ngFor="let comment of this.post.comments" [comment]="comment"></app-comments>
   <form [formGroup]="newCommentForm" class="post-more-comment-container" (ngSubmit)="setNewComment($event)">
     <p class="answer-title">Your answer</p>
